@@ -75,10 +75,10 @@ title: お持ち帰りメニュー ご注文表
 erDiagram
     customers ||--o{ orders : ""
     orders ||--|{ order_details : ""
-    order_details ||--|| product : ""
+    order_details ||--|| products : ""
     order_details  ||--||  order_options: ""
-    product ||--||  category : ""
-    product ||--o| product_sale_conditions : ""
+    products ||--||  categories : ""
+    products ||--o| product_sale_conditions : ""
 
     customers {
         int id PK "顧客ID"
@@ -149,7 +149,7 @@ erDiagram
 ## 考えたこと
 - 右記の要件 > 平日の16時まで限定で注文可能なセットメニューが追加される
     - 販売条件テーブル（`product_sale_conditions`）を作成
-        - 商品（`product`）とテーブルを分けた理由
+        - 商品（`products`）とテーブルを分けた理由
             - 販売条件がこれからも追加されること考え、条件が増減する際にproductテーブルの変更を避けるため
         - 販売条件終了日時
             - 特定の販売終了条件が終了した際に更新する
