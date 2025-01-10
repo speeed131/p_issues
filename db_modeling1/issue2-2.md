@@ -65,7 +65,7 @@ erDiagram
         datetime updated_at "更新日時"
     }
 
-    product {
+    products {
         int id PK "商品ID"
         int category_id FK "カテゴリーID"
         string product_name "商品名"
@@ -75,7 +75,7 @@ erDiagram
         datetime updated_at "更新日時"
     }
 
-    category {
+    categories {
         int id PK "カテゴリーID"
         string name "カテゴリー名"
         datetime created_at "作成日時"
