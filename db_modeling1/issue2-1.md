@@ -81,7 +81,7 @@ erDiagram
         string rice_size "シャリの大きさ"
     }
 
-    product {
+    products {
         int id PK "商品ID"
         int category_id FK "カテゴリーID"
         string product_name "商品名"
@@ -89,7 +89,7 @@ erDiagram
         boolean is_set_menu "セットメニューかどうか"
     }
 
-    category {
+    categories {
         int id PK "カテゴリーID"
         string name "カテゴリー名"
     }
