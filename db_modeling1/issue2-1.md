@@ -50,9 +50,9 @@ title: お持ち帰りメニュー ご注文表
 erDiagram
     customers ||--o{ orders : ""
     orders ||--|{ order_details : ""
-    order_details ||--|| product : ""
+    order_details ||--|| products : ""
     order_details  ||--||  order_options: ""
-    product ||--||  category : ""
+    products ||--||  categories : ""
 
     customers {
         int id PK "顧客ID"
