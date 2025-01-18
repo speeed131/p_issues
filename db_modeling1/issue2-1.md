@@ -1,6 +1,6 @@
 # 2-1
 ## 課題名
-データベースモデリング１の課題2
+データベースモデリング１の課題2-1
 > 今後はわさびの有無のみならずシャリの大小も選べるようになりました。どのようにテーブル設計をするべきでしょうか？
 
 ## PRの目的
@@ -50,9 +50,9 @@ title: お持ち帰りメニュー ご注文表
 erDiagram
     customers ||--o{ orders : ""
     orders ||--|{ order_details : ""
-    order_details ||--|| product : ""
+    order_details ||--|| products : ""
     order_details  ||--||  order_options: ""
-    product ||--||  category : ""
+    products ||--||  categories : ""
 
     customers {
         int id PK "顧客ID"
@@ -81,7 +81,7 @@ erDiagram
         string rice_size "シャリの大きさ"
     }
 
-    product {
+    products {
         int id PK "商品ID"
         int category_id FK "カテゴリーID"
         string product_name "商品名"
@@ -89,7 +89,7 @@ erDiagram
         boolean is_set_menu "セットメニューかどうか"
     }
 
-    category {
+    categories {
         int id PK "カテゴリーID"
         string name "カテゴリー名"
     }

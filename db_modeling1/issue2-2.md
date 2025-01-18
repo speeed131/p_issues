@@ -1,4 +1,4 @@
-# 2-1
+# 2-2
 ## 課題名
 データベースモデリング１の課題2-2
 > 人気の寿司ネタを特定したいので、「はな」「わだつみ」などのセット商品の売り上げとは別に、寿司ネタが毎月何個売れているのか知る必要が生じました。どのようにテーブル設計をするべきでしょうか？
@@ -8,7 +8,7 @@
 
 ## 結論
 基本、課題2-1と同じ論理設計だが、`created_at`, `updated_at` を追加。
-課題1で既に、productテーブルにセットメニューかどうかの `is_set_menu` のBoolean値を入れているため、`created_at` と `is_set_menu` で絞り込む想定。
+課題1で既に、productsテーブルにセットメニューかどうかの `is_set_menu` のBoolean値を入れているため、`created_at` と `is_set_menu` で絞り込む想定。
 
 
 
@@ -25,9 +25,9 @@ title: お持ち帰りメニュー ご注文表
 erDiagram
     customers ||--o{ orders : ""
     orders ||--|{ order_details : ""
-    order_details ||--|| product : ""
+    order_details ||--|| products : ""
     order_details  ||--||  order_options: ""
-    product ||--||  category : ""
+    products ||--||  categories : ""
 
     customers {
         int id PK "顧客ID"
@@ -65,7 +65,7 @@ erDiagram
         datetime updated_at "更新日時"
     }
 
-    product {
+    products {
         int id PK "商品ID"
         int category_id FK "カテゴリーID"
         string product_name "商品名"
@@ -75,7 +75,7 @@ erDiagram
         datetime updated_at "更新日時"
     }
 
-    category {
+    categories {
         int id PK "カテゴリーID"
         string name "カテゴリー名"
         datetime created_at "作成日時"
