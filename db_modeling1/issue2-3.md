@@ -78,7 +78,7 @@ erDiagram
     order_details ||--|| products : ""
     order_details  ||--||  order_options: ""
     products ||--||  categories : ""
-    products ||--o| product_sale_conditions : ""
+    products ||--o{ product_sale_conditions : ""
 
     customers {
         int id PK "顧客ID"
