@@ -71,6 +71,7 @@ erDiagram
     users ||--|{ channel_users : ""
     channels ||--o{ messages : ""
     messages ||--o{ thread_messages : ""
+    users ||--o{ messages : ""
 
 
     workspaces {
