@@ -91,5 +91,15 @@ CREATE TABLE
         FOREIGN KEY (descendant_directory_id) REFERENCES directories (id)
     );
 
+-- ドキュメント並び順テーブル
+CREATE TABLE
+    document_orders (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        document_id INT NOT NULL,
+        order_index INT NOT NULL,
+        updated_at DATETIME NOT NULL,
+        FOREIGN KEY (document_id) REFERENCES documents (id)
+    );
+
 -- 複合インデックスの追加で最新のドキュメント変更イベント取得を高速化
 CREATE INDEX idx_document_changes_docid_changedat ON document_changes (document_id, changed_at);
