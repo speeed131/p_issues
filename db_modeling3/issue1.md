@@ -97,7 +97,7 @@ erDiagram
     users ||--o{ documents : "作成する"
     users ||--o{ directories : "作成する"
     users ||--o{ document_changes : "作成、更新の操作記録"
-    users ||--o| document_deletes : "削除の操作記録"
+    users ||--o{ document_deletes: "削除の操作記録"
     users ||--o{ directory_changes : "作成、更新の操作記録"
     users ||--o| directory_deletes : "削除の操作記録"
     directories ||--o{ document_changes : "内包する"
