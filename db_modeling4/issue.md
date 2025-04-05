@@ -118,7 +118,7 @@ erDiagram
     users ||--o{ reminders : "リマインドを作成する、受け取る"
     workspaces ||--o{ reminders : "所属している"
     reminders ||--|{ reminder_tasks : "タスクを持っている"
-    reminder_tasks ||--|| reminder_tasks_logs: "履歴を管理する"
+    reminder_tasks ||--o| reminder_tasks_logs: "履歴を管理する"
 
 ```
 
