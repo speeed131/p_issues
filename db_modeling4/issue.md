@@ -135,6 +135,8 @@ erDiagram
       - `reminder_tasks_logs` 実行履歴が挿入される
       - `reminder_tasks` テーブルから実行したタスクは削除される
       - `reminder_tasks` テーブルに次のスケジュールタスクが挿入される
+- レコードの更新処理は発生しない
+- リマインド完了時は `reminders`, またそれに紐づく`reminder_tasks`テーブルからレコード が削除される
 
 ## 懸念点
 
