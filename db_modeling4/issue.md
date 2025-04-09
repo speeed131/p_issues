@@ -118,7 +118,7 @@ erDiagram
     users ||--o{ reminders : "リマインドを作成する、受け取る"
     workspaces ||--o{ reminders : "所属している"
     reminders ||--|{ reminder_tasks : "タスクを持っている"
-    reminder_tasks ||--o| reminder_tasks_logs: "履歴を管理する"
+    reminders ||--o{ reminder_tasks_logs: "履歴を管理する"
 
 ```
 
@@ -136,7 +136,7 @@ erDiagram
       - `reminder_tasks` テーブルから実行したタスクは削除される
       - `reminder_tasks` テーブルに次のスケジュールタスクが挿入される
 - レコードの更新処理は発生しない
-- リマインド完了時は `reminders`, またそれに紐づく`reminder_tasks`テーブルからレコード が削除される
+- リマインド完了時は `reminders`, またそれに紐づく`reminder_tasks`, `reminder_tasks_logs` テーブルからレコード が削除される
 
 ## 懸念点
 
