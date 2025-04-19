@@ -50,9 +50,9 @@ erDiagram
         datetime created_at         "作成更新日時"
     }
 
-    user ||--o{ article            : 投稿する
-    user ||--o{ article_version    : 投稿・編集する
-    article ||--|{ article_version : バージョンを持つ
+    user ||--o{ article            : "投稿する"
+    user ||--o{ article_version    : "投稿・編集する"
+    article ||--|{ article_version : "バージョンを持つ"
 
 
 ```

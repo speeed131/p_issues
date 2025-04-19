@@ -46,7 +46,7 @@ erDiagram
         boolean     is_current  "最新バージョンか"
     }
 
-    users ||--o{ article_all_versions : contributes
+    users ||--o{ article_all_versions : "投稿する"
 ```
 
 ## 考えたこと
