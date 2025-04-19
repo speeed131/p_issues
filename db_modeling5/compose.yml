@@ -1,0 +1,15 @@
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres-container
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+      POSTGRES_DB: blog_db
+    volumes:
+      - ./data:/var/lib/postgresql/data               # 永続化ストレージ
+      - ./01_init.sql:/docker-entrypoint-initdb.d/01_init.sql # 初期化スクリプト
+      - ./02_init_data.sql:/docker-entrypoint-initdb.d/02_init_data.sql # 初期データ投入スクリプト
