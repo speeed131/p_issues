@@ -99,11 +99,7 @@ SELECT
     a.id AS article_id,
     u.name AS author_name,
     v.title,
-    SUBSTRING(
-        v.content
-        FROM
-            1 FOR 200
-    ) AS snippet,
+    v.content,
     v.created_at AS updated_at
 FROM
     articles a
