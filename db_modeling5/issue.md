@@ -27,12 +27,12 @@
 
 ```mermaid
 erDiagram
-    user {
+    users {
         uuid id PK           "ユーザID"
         string name         "名前"
         string email        "メールアドレス"
     }
-    article {
+    articles {
         uuid id PK                   "記事ID"
         uuid author_id FK            "投稿者"
         uuid current_version_id FK   "最新バージョンID"
@@ -40,7 +40,7 @@ erDiagram
         datetime updated_at
     }
 
-    article_version {
+    article_versions {
         uuid id PK                   "バージョンID"
         uuid article_id FK           "記事"
         uuid editor_id FK            "編集者"
@@ -50,16 +50,16 @@ erDiagram
         datetime created_at         "作成更新日時"
     }
 
-    user ||--o{ article            : "投稿する"
-    user ||--o{ article_version    : "投稿・編集する"
-    article ||--|{ article_version : "バージョンを持つ"
+    users ||--o{ articles            : "投稿する"
+    users ||--o{ article_versions    : "投稿・編集する"
+    articles ||--|{ article_versions : "バージョンを持つ"
 
 
 ```
 
 ## 考えたこと
 
-- `article` テーブルの `current_version_id` は要件にあった最新記事一覧取得を、高速化（サブクエリなどを挟まない）のために置きました。
-  - よって、 `article` テーブルは `current_version_id` のみ更新が走ります。
-  - `article_version` は 挿入 のみになります
+- `articles` テーブルの `current_version_id` は要件にあった最新記事一覧取得を、高速化（サブクエリなどを挟まない）のために置きました。
+  - よって、 `articles` テーブルは `current_version_id` のみ更新が走ります。
+  - `article_versions` は 挿入 のみになります
 - 物理設計ではPostgreSQL とUUIDを採用してみました
