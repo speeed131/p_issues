@@ -79,3 +79,22 @@ VALUES
         '詳細を追記しました。',
         CURRENT_TIMESTAMP
     );
+
+-- ドキュメントの表示順序を更新するクエリ
+START TRANSACTION;
+
+UPDATE document_orders
+SET
+    order_index = 2,
+    updated_at = NOW ()
+WHERE
+    document_id = 1;
+
+UPDATE document_orders
+SET
+    order_index = 1,
+    updated_at = NOW ()
+WHERE
+    document_id = 2;
+
+COMMIT;
