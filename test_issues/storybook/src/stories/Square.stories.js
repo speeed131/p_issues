@@ -1,41 +1,40 @@
-
-import { fn } from 'storybook/test'
-import { Square } from '../Square'
+import { fn } from "storybook/test";
+import { Square } from "../Square";
 
 const meta = {
-  title: 'Atoms/Square',
+  title: "Atoms/Square",
   component: Square,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     value: {
-      control: { type: 'select' },
-      options: ['X', 'O', null],
-      description: 'マスの表示値',
+      control: { type: "select" },
+      options: ["X", "O", null],
+      description: "マスの表示値",
     },
     onSquareClick: {
-      action: 'onSquareClick',
-      description: 'クリック時のコールバック',
+      action: "onSquareClick",
+      description: "クリック時のコールバック",
     },
   },
   args: {
     value: null,
     onSquareClick: fn(),
   },
-}
+};
 
-export default meta
+export default meta;
 
 export const Empty = {
   args: { value: null },
-}
+};
 
 export const X = {
-  args: { value: 'X' },
-}
+  args: { value: "X" },
+};
 
 export const O = {
-  args: { value: 'O' },
-}
+  args: { value: "O" },
+};
