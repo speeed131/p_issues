@@ -1,4 +1,6 @@
 /** @type { import('@storybook/react-webpack5').Preview } */
+import "../src/styles.css";
+
 const preview = {
   parameters: {
     controls: {
