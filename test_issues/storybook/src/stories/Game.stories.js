@@ -2,7 +2,7 @@ import { Game } from "../Game";
 import { expect } from "storybook/test";
 
 const meta = {
-  title: "Organisms/Game",
+  title: "Game",
   component: Game,
   parameters: { layout: "centered" },
   tags: ["autodocs"],

@@ -2,7 +2,7 @@ import { fn } from "storybook/test";
 import { Square } from "../Square";
 
 const meta = {
-  title: "Atoms/Square",
+  title: "Square",
   component: Square,
   parameters: {
     layout: "centered",

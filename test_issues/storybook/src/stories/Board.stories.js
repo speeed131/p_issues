@@ -4,7 +4,7 @@ import { Board } from "../Board";
 const empty9 = Array(9).fill(null);
 
 const meta = {
-  title: "Molecules/Board",
+  title: "Board",
   component: Board,
   parameters: {
     layout: "centered",
