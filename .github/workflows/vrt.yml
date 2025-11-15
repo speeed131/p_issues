@@ -30,8 +30,6 @@ jobs:
         working-directory: test_issues/storybook
     env:
       REG_SUIT_GITHUB_COMMENT_TOKEN: ${{ secrets.REG_SUIT_GITHUB_COMMENT_TOKEN || secrets.GITHUB_TOKEN }}
-      REG_SUIT_GITHUB_PAGES_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      REG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:
