@@ -32,6 +32,12 @@ jobs:
       REG_SUIT_GITHUB_COMMENT_TOKEN: ${{ secrets.REG_SUIT_GITHUB_COMMENT_TOKEN || secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore branch name
+        run: |
+          branch="${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}"
+          git checkout -B "$branch"
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
