@@ -57,7 +57,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           rsync -a --delete .reg/actual/ .reg/expected/
-          if git diff --quiet -- .reg/expected ; then
+          if ! git status --short .reg/expected | grep -q . ; then
             echo "No baseline changes to commit"
             exit 0
           fi
