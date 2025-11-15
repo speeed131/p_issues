@@ -9,6 +9,12 @@
       "prCommentBehavior": "default",
       "shortDescription": true,
       "clientId": "szSwtLQ0NLG00C+IzywuLk0t1rc0NDM3MTWz1C8uSE1NTTE0NgQA"
+    },
+    "reg-publish-github-pages-plugin": {
+      "repository": "speeed131/p_issues",
+      "branchName": "gh-pages",
+      "pathPrefix": "vrt",
+      "token": "${REG_SUIT_GITHUB_PAGES_ACCESS_TOKEN}"
     }
   }
 }
