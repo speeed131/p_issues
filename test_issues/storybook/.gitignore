@@ -7,6 +7,6 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 /directory_contains_actual_images/
-.reg
+.reg/**
 !.reg/expected/
 !.reg/expected/**
