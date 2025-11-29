@@ -1,0 +1,3 @@
+- `playwright test --debug` コマンドでできることは？
+- playwrightの`expect.poll()` 関数はどんなときに使う？
+- playwrightの`page.route()` 関数はどんなときに使う
