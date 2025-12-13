@@ -52,6 +52,10 @@ describe("Issue 2", () => {
       const nonNumeric = "a" as unknown as number;
       expect(() => add(2, nonNumeric)).toThrow("Invalid argument");
     });
+
+    it("should return 'too big' when sum exceeds 1000", () => {
+      expect(add(600, 401)).to.equal("too big");
+    });
   });
 
   describe("subtract", () => {

@@ -45,9 +45,13 @@ export const multiply = (...args: number[]): number => {
 };
 
 // add 関数に 3と10と3を渡すと 16 を返す
-export const add = (...args: number[]): number => {
+export const add = (...args: number[]): number | string => {
   validateArgs(args);
-  return args.reduce((acc, val) => acc + val, 0);
+  const sum = args.reduce((acc, val) => acc + val, 0);
+  if (sum > 1000) {
+    return "too big";
+  }
+  return sum;
 };
 
 // subtract 関数に 3と10と3を渡すと -10 を返す
