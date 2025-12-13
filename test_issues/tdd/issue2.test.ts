@@ -21,6 +21,11 @@ describe("Issue 2", () => {
       const args = Array.from({ length: 31 }, () => 2); // 31個の2を用意
       expect(() => multiply(...args)).toThrow("Too many arguments");
     });
+
+    it("should throw when a non-numeric argument is provided", () => {
+      const nonNumeric = "a" as unknown as number;
+      expect(() => multiply(2, nonNumeric)).toThrow("Invalid argument");
+    });
   });
 
   describe("add", () => {
@@ -41,6 +46,11 @@ describe("Issue 2", () => {
     it("should throw an error when more than 30 arguments are provided", () => {
       const args = Array.from({ length: 31 }, () => 2); // 31個の2を用意
       expect(() => add(...args)).toThrow("Too many arguments");
+    });
+
+    it("should throw when a non-numeric argument is provided", () => {
+      const nonNumeric = "a" as unknown as number;
+      expect(() => add(2, nonNumeric)).toThrow("Invalid argument");
     });
   });
 
@@ -63,6 +73,11 @@ describe("Issue 2", () => {
       const args = Array.from({ length: 31 }, () => 1); // 31個の1を用意
       expect(() => subtract(...args)).toThrow("Too many arguments");
     });
+
+    it("should throw when a non-numeric argument is provided", () => {
+      const nonNumeric = "a" as unknown as number;
+      expect(() => subtract(2, nonNumeric)).toThrow("Invalid argument");
+    });
   });
 
   describe("divide", () => {
@@ -83,6 +98,11 @@ describe("Issue 2", () => {
     it("should throw an error when more than 30 arguments are provided", () => {
       const args = Array.from({ length: 31 }, () => 2); // 31個の2を用意
       expect(() => divide(...args)).toThrow("Too many arguments");
+    });
+
+    it("should throw when a non-numeric argument is provided", () => {
+      const nonNumeric = "a" as unknown as number;
+      expect(() => divide(2, nonNumeric)).toThrow("Invalid argument");
     });
   });
 });
