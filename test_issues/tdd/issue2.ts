@@ -55,9 +55,13 @@ export const add = (...args: number[]): number | string => {
 };
 
 // subtract 関数に 3と10と3を渡すと -10 を返す
-export const subtract = (...args: number[]): number => {
+export const subtract = (...args: number[]): number | string => {
   validateArgs(args);
-  return args.reduce((acc, val) => acc - val);
+  const result = args.reduce((acc, val) => acc - val);
+  if (result < 0) {
+    return "negative number";
+  }
+  return result;
 };
 
 // divide 関数に １００と 10 を渡すと 10 を返す

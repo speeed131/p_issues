@@ -59,8 +59,8 @@ describe("Issue 2", () => {
   });
 
   describe("subtract", () => {
-    it("should return -10 when subtracting 3, 10, and 3", () => {
-      expect(subtract(3, 10, 3)).to.equal(-10);
+    it("should return the difference when result stays non-negative", () => {
+      expect(subtract(10, 3, 3)).to.equal(4);
     });
 
     // １個の引数を受け取る
@@ -69,8 +69,11 @@ describe("Issue 2", () => {
     });
     // 30個の引数を受け取る
     it("should handle up to 30 arguments", () => {
-      const args = Array.from({ length: 30 }, () => 1); // 30個の1を用意
-      expect(subtract(...args)).to.equal(1 - 29);
+      const args = [
+        150,
+        ...Array.from({ length: 29 }, () => 1),
+      ];
+      expect(subtract(...args)).to.equal(121);
     });
     // 31個以上の引数を受け取るとエラーを返す
     it("should throw an error when more than 30 arguments are provided", () => {
@@ -81,6 +84,10 @@ describe("Issue 2", () => {
     it("should throw when a non-numeric argument is provided", () => {
       const nonNumeric = "a" as unknown as number;
       expect(() => subtract(2, nonNumeric)).toThrow("Invalid argument");
+    });
+
+    it("should return 'negative number' when result is negative", () => {
+      expect(subtract(3, 4)).to.equal("negative number");
     });
   });
 
