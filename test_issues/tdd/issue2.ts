@@ -17,26 +17,33 @@
 - 割り算の場合、計算結果を小数点何桁まで考慮するかは特に指定がありません。お任せします！
  */
 
+// 引数の数を検証するヘルパー関数
+const validateArgsLength = (args: number[]) => {
+  if (args.length < 1 || args.length > 30) {
+    throw new Error("Too many arguments");
+  }
+};
 
 // multiply 関数に 3と10と3を渡すと 90 を返す
 export const multiply = (...args: number[]): number => {
-    return args.reduce((acc, val) => acc * val, 1);
+  validateArgsLength(args);
+  return args.reduce((acc, val) => acc * val, 1);
 };
 
 // add 関数に 3と10と3を渡すと 16 を返す
 export const add = (...args: number[]): number => {
-    return args.reduce((acc, val) => acc + val, 0);
-}
+  validateArgsLength(args);
+  return args.reduce((acc, val) => acc + val, 0);
+};
 
 // subtract 関数に 3と10と3を渡すと -10 を返す
 export const subtract = (...args: number[]): number => {
-    return args.reduce((acc, val) => acc - val);
-}
+  validateArgsLength(args);
+  return args.reduce((acc, val) => acc - val);
+};
 
 // divide 関数に １００と 10 を渡すと 10 を返す
 export const divide = (...args: number[]): number => {
-    return args.reduce((acc, val) => acc / val);
-}
-
-
-
+  validateArgsLength(args);
+  return args.reduce((acc, val) => acc / val);
+};
