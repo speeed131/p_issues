@@ -71,5 +71,6 @@ export const subtract = (...args: number[]): number | string => {
 // divide 関数に １００と 10 を渡すと 10 を返す
 export const divide = (...args: number[]): number => {
   validateArgs(args);
-  return args.reduce((acc, val) => acc / val);
+  const result = args.reduce((acc, val) => acc / val);
+  return Number(result.toFixed(2));
 };

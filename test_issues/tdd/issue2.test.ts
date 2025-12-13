@@ -106,8 +106,8 @@ describe("Issue 2", () => {
 
     // 30個の引数を受け取る
     it("should handle up to 30 arguments", () => {
-      const args = Array.from({ length: 30 }, () => 2); // 30個の2を用意
-      expect(divide(...args)).to.equal(2 / Math.pow(2, 29));
+      const args = Array.from({ length: 30 }, () => 1); // 30個の1を用意（意図は30個受け取れることの確認）
+      expect(divide(...args)).to.equal(1);
     });
     // 31個以上の引数を受け取るとエラーを返す
     it("should throw an error when more than 30 arguments are provided", () => {
@@ -118,6 +118,18 @@ describe("Issue 2", () => {
     it("should throw when a non-numeric argument is provided", () => {
       const nonNumeric = "a" as unknown as number;
       expect(() => divide(2, nonNumeric)).toThrow("Invalid argument");
+    });
+
+    it("should round the result to two decimal places", () => {
+      expect(divide(1, 3)).to.equal(0.33);
+    });
+
+    it("should round down when the third decimal is less than 5", () => {
+      expect(divide(1, 250)).to.equal(0);
+    });
+
+    it("should round up when the third decimal is 5 or more", () => {
+      expect(divide(1, 200)).to.equal(0.01);
     });
   });
 });
