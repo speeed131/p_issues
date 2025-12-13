@@ -39,9 +39,13 @@ const validateArgs = (args: number[]) => {
 };
 
 // multiply 関数に 3と10と3を渡すと 90 を返す
-export const multiply = (...args: number[]): number => {
+export const multiply = (...args: number[]): number | string => {
   validateArgs(args);
-  return args.reduce((acc, val) => acc * val, 1);
+  const product = args.reduce((acc, val) => acc * val, 1);
+  if (product > 1000) {
+    return "big big number";
+  }
+  return product;
 };
 
 // add 関数に 3と10と3を渡すと 16 を返す
