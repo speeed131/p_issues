@@ -7,7 +7,7 @@ flowchart LR
     Participant[参加者]
     Admin[管理者（運営/通知先）]
 
-    subgraph System["<<システム>> プラハチャレンジ運営システム"]
+    subgraph System["プラハチャレンジシステム"]
         UC_ChangeStatus(("在籍ステータスを変更する"))
         UC_UpdateProgress(("課題進捗を更新する <br/>（所有者のみ）"))
         UC_ViewProgress(("課題進捗を参照する"))
